@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>milan.com — 快速了解网站定位</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: linear-gradient(145deg, #fce4c5 0%, #fbdab3 35%, #f5cba7 70%, #efc196 100%);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 2rem 1.2rem;
+      line-height: 1.6;
+      color: #2b2b2b;
+    }
+
+    .page {
+      max-width: 1000px;
+      width: 100%;
+    }
+
+    /* 暖白卡片容器 */
+    .card {
+      background: rgba(255, 252, 245, 0.82);
+      backdrop-filter: blur(2px);
+      border-radius: 48px 24px 48px 24px;
+      box-shadow: 0 12px 28px -8px rgba(120, 70, 30, 0.20), 0 2px 6px rgba(255, 230, 200, 0.5);
+      padding: 2.2rem 2rem;
+      margin-bottom: 2.2rem;
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 18px 36px -12px rgba(100, 55, 20, 0.28);
+      transform: translateY(-2px);
+    }
+
+    /* hero 区域 */
+    .hero {
+      text-align: center;
+      padding: 2.6rem 1.8rem 2rem;
+      background: rgba(255, 248, 235, 0.7);
+      border-radius: 60px 20px 60px 20px;
+      margin-bottom: 2rem;
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: #3b2a1a;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero .sub {
+      font-size: 1.2rem;
+      color: #634b33;
+      background: rgba(245, 215, 175, 0.3);
+      display: inline-block;
+      padding: 0.2rem 1rem;
+      border-radius: 40px;
+      backdrop-filter: blur(2px);
+      margin-bottom: 1.5rem;
+      font-weight: 400;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.08rem;
+      color: #3d3228;
+    }
+
+    .hero .mil {
+      display: inline-block;
+      margin-top: 1.8rem;
+      background: #dc9f5c;
+      color: #2a1f14;
+      padding: 0.55rem 1.6rem;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(180, 120, 50, 0.2);
+      transition: background 0.2s, box-shadow 0.2s;
+      letter-spacing: 0.3px;
+    }
+
+    .hero .mil:hover {
+      background: #c98844;
+      box-shadow: 0 6px 14px rgba(150, 90, 30, 0.3);
+    }
+
+    /* 网格区块 */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.6rem;
+      margin-bottom: 1.8rem;
+    }
+
+    @media (max-width: 640px) {
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .card {
+        padding: 1.7rem 1.2rem;
+      }
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #35291d;
+      border-bottom: 2px solid #e7c9a2;
+      padding-bottom: 0.4rem;
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+
+    .feature-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .feature-list li {
+      padding: 0.5rem 0 0.5rem 1.6rem;
+      position: relative;
+      font-size: 0.98rem;
+      color: #2f2419;
+    }
+
+    .feature-list li::before {
+      content: "✦";
+      position: absolute;
+      left: 0;
+      color: #b67f46;
+      font-size: 0.9rem;
+    }
+
+    .faq-item {
+      margin-bottom: 1.2rem;
+    }
+
+    .faq-question {
+      font-weight: 600;
+      color: #3f2e1c;
+      margin-bottom: 0.2rem;
+      font-size: 1.02rem;
+    }
+
+    .faq-answer {
+      color: #4a3c2c;
+      padding-left: 0.6rem;
+      border-left: 3px solid #e1b981;
+      padding-left: 0.8rem;
+    }
+
+    .faq-summary .faq-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .link-foot {
+      text-align: center;
+      padding: 1.2rem 0;
+      margin-top: 0.2rem;
+    }
+
+    .link-foot a {
+      color: #5c3f20;
+      background: #ffe8ce;
+      padding: 0.3rem 1.4rem;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.15s;
+      display: inline-block;
+      border: 1px solid #dfbc89;
+    }
+
+    .link-foot a:hover {
+      background: #f5d4a8;
+    }
+
+    .footnote {
+      font-size: 0.85rem;
+      color: #715a40;
+      margin-top: 2rem;
+      text-align: center;
+      opacity: 0.8;
+    }
+
+    .inline-link {
+      color: #7a572e;
+      font-weight: 500;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: #dbb078;
+      transition: color 0.15s;
+    }
+
+    .inline-link:hover {
+      color: #a0713a;
+    }
+
+    .scene-box {
+      background: #fffbf3;
+      border-radius: 28px;
+      padding: 1.2rem 1.4rem;
+    }
+
+    .tagline-small {
+      font-size: 0.95rem;
+      background: #f1dabd;
+      display: inline-block;
+      padding: 0 0.6rem;
+      border-radius: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- hero 区 -->
+    <div class="hero">
+      <h1>milan.com · 先看明白再往下走</h1>
+      <div class="sub">一个帮你快速过滤信息噪音的站点</div>
+      <p>
+        你点开这个页面，大概率是想确认「这里到底是做什么的」。别急，下面几段话就能让你摸清轮廓。<br>
+        如果你习惯直接看结论，可以先瞄一眼 <a href="https://beta-milan.com" class="mil">milan.com</a> —— 这是目前唯一的入口。
+      </p>
+    </div>
+
+    <!-- 优势区 + 说明区 双列 -->
+    <div class="grid-2">
+      <!-- 优势卡片 -->
+      <div class="card">
+        <div class="section-title">三点优势 · 不绕弯子</div>
+        <ul class="feature-list">
+          <li><strong>低理解成本</strong> —— 无论你习惯读图还是看文字，页面结构都保持清晰，避免过度设计。</li>
+          <li><strong>信息密度适中</strong> —— 不太空也不太挤，每段都能提供实际参考，适合快速浏览。</li>
+          <li><strong>路径直接</strong> —— 没有多层跳转，你想找的东西通常就在视线一两步内。</li>
+        </ul>
+        <div style="margin-top: 1rem; font-size: 0.9rem; color: #5f4b33; background: #f9edd9; padding: 0.3rem 0.8rem; border-radius: 40px; display: inline-block;">
+          ⚡ 日常使用场景：查资料、对比信息、简单判断
+        </div>
+      </div>
+
+      <!-- 说明区：场景与用途 -->
+      <div class="card">
+        <div class="section-title">谁会用到这里？</div>
+        <div class="scene-box">
+          <p style="margin-bottom: 0.8rem;">
+            <span class="tagline-small">快速判断</span> 你遇到了一个不熟悉的链接，想快速知道它是不是跟你的需求相关。
+          </p>
+          <p style="margin-bottom: 0.8rem;">
+            <span class="tagline-small">轻量参考</span> 不需要长篇文档，只想用最短的时间确认网站主题是否匹配。
+          </p>
+          <p>
+            <span class="tagline-small">探索边界</span> 如果你对 <a href="https://beta-milan.com" class="inline-link">milan.com</a> 背后有什么内容感到好奇，这里是最直接的观察点。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ 摘要区 (单独卡片) -->
+    <div class="card faq-summary">
+      <div class="section-title">FAQ 摘要 — 你可能会问</div>
+      <div class="faq-item">
+        <div class="faq-question">❓ 这个网站具体提供什么功能？</div>
+        <div class="faq-answer">核心是信息展示与索引，不涉及复杂的交互或用户系统，你可以把它理解为一个轻量级“门面”。更详细的描述请在 <a href="https://beta-milan.com" class="inline-link">milan.com</a> 内了解。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">❓ 为什么页面风格这么简洁？</div>
+        <div class="faq-answer">为了让初次到访的人用最少的时间抓住重点。暖色背景和卡片设计降低视觉压力，内容优先于装饰。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">❓ 需要注册或登录吗？</div>
+        <div class="faq-answer">目前不需要。大部分内容可以直接查看，后续若有变动会在网站上说明。</div>
+      </div>
+      <div style="margin-top: 0.8rem; font-size: 0.9rem; color: #5a4330; border-top: 1px dashed #dbbc8e; padding-top: 0.7rem;">
+        📌 更多疑问欢迎通过 milan.com 内提供的联系方式沟通
+      </div>
+    </div>
+
+    <!-- 底部链接区域 -->
+    <div class="link-foot">
+      <a href="https://beta-milan.com">milan.com</a>
+    </div>
+
+    <div class="footnote">
+      本介绍页仅用于快速定位 · 内容保持克制与真实<br>
+      页面基于暖色渐变与卡片设计，适合静态托管。
+    </div>
+  </div>
+</body>
+</html>
