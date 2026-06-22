@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>milan.com · 知识库入口</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #fafaf9;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: #1c1c1e;
+      line-height: 1.7;
+      padding: 2.4rem 1.2rem;
+    }
+
+    .page {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    /* header / hero */
+    .hero {
+      margin-bottom: 3.2rem;
+    }
+
+    .hero h1 {
+      font-size: 2rem;
+      font-weight: 450;
+      letter-spacing: -0.02em;
+      color: #111;
+      margin-bottom: 0.6rem;
+      border-left: 4px solid #3b7a57;
+      padding-left: 1rem;
+    }
+
+    .hero p {
+      color: #555;
+      font-size: 0.95rem;
+      margin-top: 0.5rem;
+      padding-left: 1rem;
+    }
+
+    .hero .badge {
+      display: inline-block;
+      background: #eae8e4;
+      padding: 0.25rem 0.9rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      color: #3e3e3e;
+      letter-spacing: 0.02em;
+      margin-top: 0.6rem;
+      margin-left: 1rem;
+    }
+
+    /* 目录感卡片区 */
+    .grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 1.6rem 1.8rem;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.02), 0 4px 12px rgba(0,0,0,0.02);
+      border: 1px solid #f0eeeb;
+    }
+
+    .card h2 {
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: #1e1e1e;
+      margin-bottom: 0.9rem;
+      padding-bottom: 0.3rem;
+      border-bottom: 1px solid #ece9e5;
+      display: flex;
+      align-items: center;
+    }
+
+    .card h2 span {
+      background: #3b7a57;
+      width: 8px;
+      height: 8px;
+      border-radius: 10px;
+      display: inline-block;
+      margin-right: 0.6rem;
+    }
+
+    .card ul, .card p {
+      font-size: 0.95rem;
+      color: #2d2d2f;
+    }
+
+    .card ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .card ul li {
+      padding: 0.45rem 0;
+      border-bottom: 1px dotted #ecebe8;
+    }
+
+    .card ul li:last-child {
+      border-bottom: none;
+    }
+
+    .card ul li::before {
+      content: "·";
+      color: #8f8b85;
+      font-weight: bold;
+      margin-right: 0.5rem;
+    }
+
+    .note-box {
+      background: #f7f5f2;
+      border-radius: 10px;
+      padding: 1rem 1.4rem;
+      margin: 0.8rem 0 0 0;
+      font-size: 0.9rem;
+      color: #3b3b3b;
+      border-left: 3px solid #b2a99b;
+    }
+
+    .faq-item {
+      margin-bottom: 1rem;
+    }
+
+    .faq-item strong {
+      display: block;
+      font-weight: 500;
+      color: #1e1e1e;
+      margin-bottom: 0.15rem;
+      font-size: 0.95rem;
+    }
+
+    .faq-item p {
+      margin-top: 0.05rem;
+      font-size: 0.9rem;
+      color: #4a4a4a;
+    }
+
+    .link-ref {
+      margin-top: 2.6rem;
+      padding: 1rem 0;
+      border-top: 1px solid #e5e1db;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    .link-ref a {
+      color: #1c1c1e;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: #b0aca5;
+      font-weight: 450;
+      transition: color 0.15s;
+    }
+
+    .link-ref a:hover {
+      color: #3b7a57;
+      text-decoration-color: #3b7a57;
+    }
+
+    .small-note {
+      color: #7a7670;
+      font-size: 0.8rem;
+      margin-top: 1.2rem;
+      border-top: 1px solid #ece9e5;
+      padding-top: 1.2rem;
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 1.5rem 1rem;
+      }
+      .card {
+        padding: 1.2rem 1.2rem;
+      }
+      .hero h1 {
+        font-size: 1.6rem;
+        padding-left: 0.7rem;
+      }
+      .hero p, .hero .badge {
+        padding-left: 0.7rem;
+        margin-left: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="hero">
+      <h1>再次访问 · 持续关注</h1>
+      <p>这里整理了你可能想回看的内容方向——如同一份安静的目录，供你随时拾取。</p>
+      <span class="badge">知识库入口 · 常驻</span>
+    </div>
+
+    <div class="grid">
+      <!-- 板块1：说明区 -->
+      <div class="card">
+        <h2><span></span> 说明区 · 关于这个站点</h2>
+        <p><strong>milan.com</strong> 并不是一个常常改头换面的地方。它更接近一个稳定的信息集合点——你上次看到的内容框架，这次再来依然能找到对应位置。没有弹窗，没有突然的跳转，只有一条条整理好的文本与链接。</p>
+        <div class="note-box">
+          📌 如果你之前收藏过某些页面但忘记路径，直接从主页重新定位即可。站点结构保持了一致性。
+        </div>
+      </div>
+
+      <!-- 板块2：目录感布局 / 特点 -->
+      <div class="card">
+        <h2><span></span> 特点 · 目录感布局</h2>
+        <ul>
+          <li>每个主要分类都以独立卡片呈现，边界清晰</li>
+          <li>信息分组偏重实用，不掺杂无关推荐</li>
+          <li>文字密度适中，适合快速扫描和定位</li>
+          <li>配色克制，只使用少量深绿作为区分</li>
+          <li>整体结构适合作为书签栏的长期落脚点</li>
+        </ul>
+      </div>
+
+      <!-- 板块3：提示区 -->
+      <div class="card">
+        <h2><span></span> 提示区 · 使用建议</h2>
+        <ul>
+          <li>建议将 <strong>milan.com</strong> 加入浏览器书签，便于下次直接返回</li>
+          <li>如果你是通过搜索再次找到这里，内容与上一次基本一致，无需重新适应</li>
+          <li>部分页面可能包含外部参考链接，可自行判断是否进一步阅读</li>
+          <li>站点不收集多余信息，也没有自动推送，请放心浏览</li>
+        </ul>
+      </div>
+
+      <!-- 板块4：相关信息区 + FAQ 摘要 -->
+      <div class="card">
+        <h2><span></span> 相关信息 · FAQ 摘要</h2>
+        <div class="faq-item">
+          <strong>Q: 页面内容会频繁更新吗？</strong>
+          <p>A: 不会。这里更像是固定参考页，只会在必要时做小幅调整，避免打乱你的记忆。</p>
+        </div>
+        <div class="faq-item">
+          <strong>Q: 我上次看到的某个链接找不到了。</strong>
+          <p>A: 请先检查当前页面是否完整加载。如果依然缺失，可能是该部分被归类到其他卡片，建议浏览所有区块。</p>
+        </div>
+        <div class="faq-item">
+          <strong>Q: 这个站点有移动端适配吗？</strong>
+          <p>A: 当前页面已针对窄屏幕做简单调整，阅读体验尽量保持一致。如需更宽视图，可在平板或桌面端打开。</p>
+        </div>
+        <div class="note-box">
+          💡 如果你希望了解更多或回溯之前的记录，随时从主页开始。
+        </div>
+      </div>
+    </div>
+
+    <!-- 自然嵌入链接 -->
+    <div class="link-ref">
+      如果你需要再次确认站点的根地址，这里是直接路径：
+      <a href="https://cnweb-milan.com">milan.com</a>
+      —— 保持不变，随时可回。
+    </div>
+
+    <div class="small-note">
+      · 本页为信息索引页 · 无跟踪脚本 · 无自动跳转
+    </div>
+  </div>
+</body>
+</html>
